@@ -1,0 +1,80 @@
+body {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.background-mirror {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transform: scaleX(-1);
+    z-index: -1;
+}
+
+.background-mirror::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-image: url("https://media.giphy.com/media/l1KXtGiWieAhji91u/giphy.gif");
+    background-repeat: repeat-x;
+    background-size: cover;
+    transform: scaleX(-1);
+}
+
+.logo {
+    position: fixed;
+    top: 45%;  
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: slide-in 1s forwards;
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    color: white;
+    white-space: nowrap;
+    display: flex;           /* Making the child spans align in a row */
+    gap: 15px;               /* Space between each span */
+    text-shadow: 2px 2px 6px orange, -2px -2px 6px yellow, 2px -2px 6px red;
+}
+
+.logo-text{
+    font-size: 80px;
+}
+
+@keyframes slide-in {
+    0% { left: 0%; }
+    100% { left: 50%; }
+}
+
+
+@keyframes center-rest {
+    0% { right: 50%; }
+    100% { right: 50%; }
+}
+
+.hombre-button {
+    position: fixed;
+    top: calc(50% + 120px);
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: slide-in-button 1s 3s forwards;
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: darkorange;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+@keyframes slide-in-button {
+    0% { top: calc(50% + 120px); opacity: 0; }
+    100% { top: calc(50% + 60px); opacity: 1; }
+}
